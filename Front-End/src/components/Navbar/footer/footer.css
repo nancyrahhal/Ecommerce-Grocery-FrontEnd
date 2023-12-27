@@ -1,0 +1,113 @@
+footer {
+    margin-top: 5%;
+    background: #f2f2f2;
+    font: 10pt Verdana;
+    position: relative;
+    width: 100%;
+    clear: both;
+  }
+  
+  .footerTest {
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+    background-color: #d9d9d9;
+  }
+  
+  #motto {
+    background: #B6B6AB;
+    text-align: center;
+    width: 100%;
+    padding: 20px 0; /* Adjust the padding as needed */
+    color: black; /* Set the font color to black */
+    font: 16pt Georgia;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  }
+  
+  #legal {
+    width: 100%;
+    text-align: center;
+    color: black; /* Set the font color to black */
+    background: #22697F;
+    font-size: 8pt;
+    line-height: 1.6em;
+    padding: 10px; /* Adjust the padding as needed */
+    box-sizing: border-box;
+  }
+  
+  .footerWrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    padding: 5px 25px;
+    box-sizing: border-box;
+    background-color: #d9d9d9;
+  }
+  
+  .toe {
+    flex: 0 0 30%;
+    font-size: 14pt; /* Adjust the font size */
+    line-height: 1.6em;
+    vertical-align: top;
+    color: black; /* Set the font color to black */
+  }
+  
+  .toe a {
+    display: block;
+    text-decoration: none;
+    color: black; /* Set the font color to black */
+  }
+  
+  .toe a:hover {
+    text-decoration: underline;
+  }
+  
+  .toe h3 {
+    color: black; /* Set the font color to black */
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 12pt;
+    display: inline-block;
+    letter-spacing: 1px;
+  }
+  
+  #social a {
+    display: inline-block;
+    width: 29px;
+    height: 29px;
+    margin: 0 3px 3px 0;
+  }
+  
+  #fb {
+    background: url("https://imgur.com/fCRgp42.png") 0 0 no-repeat;
+  }
+  
+  #twitter {
+    background: url("https://imgur.com/fCRgp42.png") -29px 0 no-repeat;
+    border-radius: 4px;
+  }
+  
+  #blog {
+    background: url("https://imgur.com/fCRgp42.png") -58px 1px no-repeat;
+  }
+  
+  #pinterest {
+    background: url("https://imgur.com/fCRgp42.png") -87px 0 no-repeat;
+    border-radius: 4px;
+  }
+  
+  #instagram {
+    background: url("https://imgur.com/fCRgp42.png") -146px 0 no-repeat;
+  }
+  
+  #ravelry {
+    background: url("https://imgur.com/fCRgp42.png") -117px 0 no-repeat;
+  }
+  
+  #rss {
+    background: url("https://imgur.com/fCRgp42.png") -175px 0 no-repeat;
+  }
+  
