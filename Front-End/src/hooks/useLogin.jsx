@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { useAuthContext } from "./useAuthContext";
+import { useNavigate } from "react-router-dom";
 
 export const useLogin = () => {
+  const navigate =useNavigate()
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(null);
   const { dispatch } = useAuthContext();
@@ -29,7 +31,13 @@ export const useLogin = () => {
       dispatch({ type: "LOGIN", payload: json });
 
       setIsLoading(false);
+      console.log("befor if")
+      if(json.role === "admin") {
+      console.log("---", json);
+
+              console.log("after if");
+      navigate("/admin");}
     }
   };
-  return {login, setIsLoading, error}
+  return { login, setIsLoading, error };
 };

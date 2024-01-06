@@ -1,14 +1,13 @@
 /* google font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap");
 
 /* layout */
 :root {
-    --primary: #7cb334;
-    --error: #e71919;
-  }
+  --primary: #7cb334;
+  --error: #e71919;
+}
 
-
-.pages{
+.pages {
   max-width: 1400px;
   padding: 20px;
   margin: 0 auto;
@@ -21,12 +20,11 @@
   gap: 100px;
 }
 
-.signup-page, .login-page{
-    display: flex;
-    flex-direction: row;
-    width: 1400px;
-
-
+.signup-page,
+.login-page {
+  display: flex;
+  flex-direction: row;
+  width: 1400px;
 }
 .workout-details {
   background: #fff;
@@ -34,15 +32,15 @@
   margin: 20px auto;
   padding: 20px;
   position: relative;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
 }
 
-
-label, input {
+label,
+input {
   display: block;
 }
-label{
-    font-size: 14px;
+label {
+  font-size: 14px;
 }
 input {
   padding: 5px;
@@ -56,20 +54,21 @@ input {
 }
 
 form button {
-    width: 50%;
-    background: var(--primary);
-    border: 0;
-    color: #fff;
-    padding: 10px;
-    margin-top: 16px;
-    font-family: "Cabin";
-    border-radius: 4px;
-    cursor: pointer;
-    align-self: center;
+  width: 50%;
+  background: var(--primary);
+  border: 0;
+  color: #fff;
+  padding: 10px;
+  margin-top: 16px;
+  font-family: "Cabin";
+  border-radius: 4px;
+  cursor: pointer;
+  align-self: center;
+  margin-bottom: 5px;
+}
 
-  }
-
-form.signup, form.login {
+form.signup,
+form.login {
   width: 400px;
   margin: 40px auto;
   padding: 20px;
@@ -79,18 +78,23 @@ form.signup, form.login {
   flex-direction: column;
   
 }
-form h3{
-    margin-top: 0px;
+form h3 {
+  margin-top: 0px;
 }
 
 div.error {
-    padding: 10px;
-    background: #ffefef;
-    border: 1px solid var(--error);
-    color: var(--error);
-    border-radius: 4px;
-    margin: 20px 0;
-  }
-  input.error {
-    border: 1px solid var(--error);
-  }
+  padding: 10px;
+  background: #ffefef;
+  border: 1px solid var(--error);
+  color: var(--error);
+  border-radius: 4px;
+  margin: 20px 0;
+}
+input.error {
+  border: 1px solid var(--error);
+}
+
+form.login .googleReactAuth {
+  align-self: center;
+  border-radius: 10px;
+}

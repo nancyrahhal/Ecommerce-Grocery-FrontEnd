@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useSignup } from "../hooks/useSignup";
 import './Forms.css'
 import SignupPic from "../assets/SignupPic.png"
