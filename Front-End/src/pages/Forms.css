@@ -1,0 +1,96 @@
+/* google font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
+
+/* layout */
+:root {
+    --primary: #7cb334;
+    --error: #e71919;
+  }
+
+
+.pages{
+  max-width: 1400px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+/* homepage */
+.home {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 100px;
+}
+
+.signup-page, .login-page{
+    display: flex;
+    flex-direction: row;
+    width: 1400px;
+
+
+}
+.workout-details {
+  background: #fff;
+  border-radius: 4px;
+  margin: 20px auto;
+  padding: 20px;
+  position: relative;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+}
+
+
+label, input {
+  display: block;
+}
+label{
+    font-size: 14px;
+}
+input {
+  padding: 5px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 12px;
+}
+
+form button {
+    width: 50%;
+    background: var(--primary);
+    border: 0;
+    color: #fff;
+    padding: 10px;
+    margin-top: 16px;
+    font-family: "Cabin";
+    border-radius: 4px;
+    cursor: pointer;
+    align-self: center;
+
+  }
+
+form.signup, form.login {
+  width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  
+}
+form h3{
+    margin-top: 0px;
+}
+
+div.error {
+    padding: 10px;
+    background: #ffefef;
+    border: 1px solid var(--error);
+    color: var(--error);
+    border-radius: 4px;
+    margin: 20px 0;
+  }
+  input.error {
+    border: 1px solid var(--error);
+  }
