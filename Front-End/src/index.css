@@ -1,0 +1,35 @@
+/* google font */
+@import url('https://fonts.googleapis.com/css2?family=Signika:wght@300;400;500;600;800&family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
+
+/* layout */
+:root {
+  --primary: #7cb334;
+  --error: #e71919;
+}
+body {
+  background: #f1f1f1;
+  margin: 0;
+  font-family: "Cabin";
+}
+
+.pages{
+  max-width: 1400px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+
+div.error {
+  padding: 10px;
+  background: #ffefef;
+  border: 1px solid var(--error);
+  color: var(--error);
+  border-radius: 4px;
+  margin: 20px 0;
+}
+input.error {
+  border: 1px solid var(--error);
+}
+
+
