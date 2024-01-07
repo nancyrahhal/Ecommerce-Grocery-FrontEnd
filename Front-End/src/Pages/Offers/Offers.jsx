@@ -24,7 +24,7 @@ const Offers = () => {
       <div className="offers-container">
         <div className="offers-list">
           {products
-            .filter((product) => product)
+            .filter((product) => product.itsOffer)
             .map((product, index) => (
               <div key={index} className="offer-item">
                 <img
