@@ -35,6 +35,10 @@ function App() {
               element={user ? <Home /> : <Navigate to="/login" />}
             />
             <Route
+              path="/nearby"
+              element={user ? <NearbyGroceries /> : <Navigate to="/login" />}
+            />
+            <Route
               path="/offers"
               element={user ? <Offers /> : <Navigate to="/login" />}
             />

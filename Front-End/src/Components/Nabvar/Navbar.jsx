@@ -38,6 +38,9 @@ const Navbar = () => {
            <Link to="/offers">
             Offers
           </Link>
+          <Link to="/nearby">
+            Nearby Groceries
+          </Link>
           <Link to="#" onClick={handleAboutClick}>
             About us
           </Link>
