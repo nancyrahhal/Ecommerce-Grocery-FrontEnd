@@ -1,0 +1,21 @@
+.nearGroceries{
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    
+}
+
+.myLongitudeLatitude{
+    
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+    margin-bottom: 30px;
+}
+
+.myLongitudeLatitude button{
+    
+    font-size: x-large;
+}
