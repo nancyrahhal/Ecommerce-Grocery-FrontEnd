@@ -18,7 +18,7 @@ const GroceryCards = ({ grocery }) => {
           <div>
             <Link
               to={{
-                pathname: `/StoreDetails/${grocery.storeName}`,
+                pathname: `/StoreDetails/${grocery.id}`,
               }}
               className=" button"
             >

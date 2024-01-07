@@ -6,6 +6,16 @@
     margin-bottom: 40px; /* Add margin for spacing */
   }
 
+.showAllButton{
+display: flex;
+justify-content: center;
+margin-bottom: 20px;
+}
+.showAllButton button{
+font-size: xx-large;
+border-radius: 10px;
+}
+
 
 .details p {
     font-size: 35px;
