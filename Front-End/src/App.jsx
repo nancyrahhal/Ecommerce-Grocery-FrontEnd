@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useAuthContext } from "./hooks/useAuthContext.jsx";
 import Login from "./Pages/Login&Signup/Login.jsx";
 import Signup from "./Pages/Login&Signup/Signup.jsx";
-import AdminDashboard from "./Pages/Admin/adminDashboard/adminDashboard.jsx";
+import AdminDashboard from "./Pages/Admin/AdminDashboard.jsx";
 import { useEffect } from "react";
 import ProtectedRoute from "./hooks/protectedRoutes.jsx";
 import Home from "./Pages/Home/Home.jsx";
@@ -19,7 +19,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Navbar />
+        {user?.role !== "admin" && <Navbar />}
         <div className="pages">
           <Routes>
             {/* <Route path="/admin" element={user?<AdminDashboard/>:<Navigate to='/login'/>} /> */}
