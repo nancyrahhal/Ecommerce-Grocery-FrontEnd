@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from "react";
 import "./NearbyGroceries.css";
 import axios from "axios";
+import GroceryCards from "../../Components/GroceryCards/GroceryCards.jsx"
+
 
 const Home = () => {
   const [location, setLocation] = useState(null);
+    const [nearest, setNearest] = useState({});
+      const [showNearest, setShowNearest] = useState(false);
+
   const [groceries, setGroceries] = useState([
     { storeName: "Beirut-A-1", latitude: 33.8938, longitude: 35.5018 },
     // Approximately 0 km away
@@ -43,7 +48,7 @@ const Home = () => {
         console.error("Error:", error);
       }
     };
-    // fetchAllGroceries();
+    fetchAllGroceries();
   }, []);
 
   // Function to calculate the distance between two points using the Haversine formula
@@ -68,30 +73,26 @@ const Home = () => {
   }
 
   //--- Function to find the nearest grocery store----------------------------------------------------------------------------------------
-  // function findNearestGrocery(latitude, longitude) {
-  //   let nearestGrocery = null;
-  //   let minDistance = Infinity;
+  function findNearestGrocery(latitude, longitude) {
+    let nearestGrocery = null;
+    let minDistance = Infinity;
 
-  //   groceries?.forEach((grocery) => {
-  //     const distance = calculateDistance(
-  //       latitude,
-  //       longitude,
-  //       grocery.latitude,
-  //       grocery.longitude
-  //     );
-  //     if (distance < minDistance) {
-  //       minDistance = distance;
-  //       nearestGrocery = grocery;
-  //     }
-  //   });
+    groceries?.forEach((grocery) => {
+      const distance = calculateDistance(
+        location?.latitude, location?.longitude,
+        grocery.latitude,
+        grocery.longitude
+      );
+      if (distance < minDistance) {
+        minDistance = distance;
+        nearestGrocery = grocery;
+      }
+    });
 
-  //   return nearestGrocery;
-  // }
-  // const nearestGrocery = findNearestGrocery(
-  //   location?.latitude,
-  //   location?.longitude
-  // );
-  // console.log("Nearest grocery:", nearestGrocery);
+    setNearest(nearestGrocery);
+    setShowNearest(true)
+  }
+
   //--- Function to find the nearest grocery store----------------------------------------------------------------------------------------
 
   // ****Function to sort groceries by nearest distance***********************************************************************************
@@ -113,6 +114,8 @@ const Home = () => {
       return distanceA - distanceB; // Sort in ascending order
     });
     setGroceries(sortedGroceries);
+        setShowNearest(false);
+
   }
   // ****Function to sort groceries by nearest distance***********************************************************************************
 
@@ -121,24 +124,55 @@ const Home = () => {
       <div>
         {location ? (
           <div>
-            Latitude: {location.latitude}
-            <br />
-            Longitude: {location.longitude}
-            <button onClick={sortGroceriesByNearest}>Sort by Nearest</button>
-            {groceries.map((grocery) => {
-              const distanceInKm = calculateDistance(
-                location.latitude,
-                location.longitude,
-                grocery.latitude,
-                grocery.longitude
-              );
-              return (
-                <div key={grocery.storeName} className="grocery-card">
-                  <h3>{grocery.storeName}</h3>
-                  <p>Distance: {distanceInKm.toFixed(2)} km</p>
-                </div>
-              );
-            })}
+            <div className="myLongitudeLatitude">
+              <button onClick={sortGroceriesByNearest}>Sort by Nearest</button>
+
+              <h3>
+                Latitude: {location.latitude}
+                <br />
+                Longitude: {location.longitude}
+              </h3>
+              <button onClick={findNearestGrocery}>Find Nearest</button>
+            </div>
+            <div className="nearGroceries">
+              {!showNearest &&
+                groceries.map((grocery) => {
+                  const distanceInKm = calculateDistance(
+                    location.latitude,
+                    location.longitude,
+                    grocery.latitude,
+                    grocery.longitude
+                  );
+
+                  return (
+                    <div key={grocery.storeName}>
+                      <div>
+                        <GroceryCards grocery={grocery} />
+                        <p>Distance: {distanceInKm.toFixed(2)} km</p>
+                      </div>
+                    </div>
+                  );
+                })}
+
+              {showNearest &&
+                [nearest].map((grocery) => {
+                  const distanceInKm = calculateDistance(
+                    location.latitude,
+                    location.longitude,
+                    grocery.latitude,
+                    grocery.longitude
+                  );
+
+                  return (
+                    <div key={grocery.storeName}>
+                      <div>
+                        <GroceryCards grocery={grocery} />
+                        <p>Distance: {distanceInKm.toFixed(2)} km</p>
+                      </div>
+                    </div>
+                  );
+                })}
+            </div>
           </div>
         ) : (
           <div>Loading location...</div>
