@@ -1,0 +1,51 @@
+.findgrocery{
+    font-size: 50px;
+    text-align: center;
+    color :#7cb334;
+    font-weight: bolder;
+  }
+ 
+  /* search */
+  .search {
+    display: flex;
+    align-items: center;
+    height: 50px;
+  }
+  
+  .searchInput {
+    margin-left: 66%; /* Adjusted the margin for centering */
+    color: black;
+    border-radius: 8px;
+    height: 40px;
+    width: 20%; /* Adjusted the width for responsiveness */
+    box-sizing: border-box; /* Include padding and border in the total width and height */
+  }
+  
+  .searchButton {
+    margin-left: 2%;
+    background-color: #7CB334;
+    border-radius: 11px;
+    height: 35px;
+    width: 120px;
+    font-size: medium;
+    font-weight: bold;
+  }
+
+  
+  /* Media Query for smaller screens */
+  @media only screen and (max-width: 768px) {
+    .search {
+      flex-direction: column;
+      height: auto;
+    }
+  
+    .searchInput {
+      margin: 10px 0;
+      width: 95%; /* Adjusted the width for smaller screens */
+    }
+  
+    .searchButton {
+      margin: 10px 0;
+      width: 50%; /* Adjusted the width for smaller screens */
+    }
+  }

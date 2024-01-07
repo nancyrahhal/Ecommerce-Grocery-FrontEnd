@@ -1,0 +1,154 @@
+
+.storedetails {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 40px; /* Add margin for spacing */
+  }
+
+
+.details p {
+    font-size: 35px;
+    margin: 0;
+  }
+  
+
+
+.details {
+    margin-top: 40px;
+    line-height: 3; /* Adjust line-height for better spacing */
+  }
+
+.categoriesdiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow-x: auto; 
+    margin: auto;
+    max-width: 95%; 
+  }
+
+
+
+.productcard{
+    height: 400px;
+    width: 400px;
+    background-color: #c1c2c5;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.productimage {
+  width: 100%;
+  height: 70%;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 100px;
+  width: 83%;
+  margin: 0 auto;
+}
+
+.products h1,h4 {
+    margin-left: 10px;
+}
+
+.detailsspan{
+    margin-right: 20px;
+}
+
+
+.catimg {
+    height: auto;
+    width: 100%;
+    max-width: 200px;
+    object-fit: cover;
+  }
+
+/* Store image */
+.storeimg2 {
+    height: auto;
+    width: 100%;
+    max-width: 100%; 
+    max-height: 100%; 
+  }
+
+  .arrow-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  .arrow {
+    font-size: 30px; 
+  }
+  
+  @media screen and (max-width: 768px) {
+    .storedetails {
+      grid-template-columns: 1fr; /* Switch to single column layout */
+    }
+  
+    .categoriesdiv {
+      justify-content: center; /* Center categories on smaller screens */
+    }
+  
+    .productcard {
+      height: auto;
+      width: 100%;
+      border-radius: 30px;
+      margin-top: 20px;
+    }
+  
+    .products {
+      width: 100%;
+      gap: 40px;
+    }
+    .details {
+        margin-top: 20px; /* Adjust margin for smaller screens */
+      }
+      .details p {
+        font-size: 28px; /* Adjust font size for smaller screens */
+      }
+      .productimage {
+        height: 50%;
+        border-radius: 30px;
+      }
+    
+  }
+  
+  @media only screen and (max-width: 480px) {
+    .productcard {
+      height: auto;
+      width: 100%;
+      border-radius: 20px;
+      margin-top: 20px;
+    }
+  
+    .productimage {
+      height: 40%;
+      border-radius: 20px;
+    }
+  
+    .products {
+      width: 100%;
+      gap: 20px;
+    }
+  
+    .products h1,
+    .products h4 {
+      margin-left: 5px;
+    }
+  
+    .detailsspan {
+      margin-right: 10px;
+    }
+  }
+  

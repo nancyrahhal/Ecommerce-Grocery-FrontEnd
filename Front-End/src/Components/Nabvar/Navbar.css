@@ -1,0 +1,39 @@
+:root {
+  --primary: #7cb334;
+  --error: #e71919;
+}
+
+header {
+  background: #fff;
+}
+header .container {
+  margin: 0 auto;
+  padding: 10px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .container a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+nav a {
+  margin-left: 10px;
+}
+
+nav button {
+  background: #fff;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-family: "Cabin";
+  cursor: pointer;
+  font-size: 1em;
+  margin-left: 10px;
+}

@@ -1,0 +1,80 @@
+.GroceryCard {
+    height: 400px;
+    width: 400px;
+    background-color: #d9d9d9;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .CardSecond {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .Groceries {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 50px;
+    width: 83%;
+    margin: 0 auto;
+  }
+  
+  .GroceryImages {
+    width: 100%;
+    height: 65%;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+  }
+  
+  .GroceryInformation {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+  }
+  
+  .button {
+    background-color: #7cb334;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 25px;
+    border-radius: 10px;
+    width: 150px;
+    height: 70px;
+    align-self: flex-start;
+    margin-top: 35px;
+    margin-right: 45px;
+    font-weight: bold;
+    display: block;
+    height: fit-content;
+    width: fit-content;
+  }
+  
+  @media only screen and (max-width: 786px) {
+    .Groceries {
+      grid-template-columns: 1fr 1fr;
+      width: 100%;
+      gap: 5px;
+    }
+    .GroceryCard {
+      height: 270px;
+      width: 270px;
+    }
+  }
+  
+  @media only screen and (max-width: 480px) {
+    .Groceries {
+      width: 100%;
+      grid-template-columns: 1fr;
+    }
+    .GroceryCard {
+      height: 100%;
+      width: 100%;
+    }
+  }
+  

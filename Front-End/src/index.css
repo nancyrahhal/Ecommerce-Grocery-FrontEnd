@@ -13,12 +13,11 @@ body {
   font-family: "Cabin";
 }
 
-.pages{
-  max-width: 1400px;
-  padding: 20px;
+.pages {
   margin: 0 auto;
+  padding: 20px;
+  max-width: 1400px;
 }
-
 
 div.error {
   padding: 10px;
