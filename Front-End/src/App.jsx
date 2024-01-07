@@ -32,7 +32,7 @@ function App() {
 
             <Route
               path="/"
-              element={user ? <Home /> : <Navigate to="/login" />}
+              element={user  ?<Home /> : <Navigate to="/login" />}
             />
             <Route
               path="/nearby"
