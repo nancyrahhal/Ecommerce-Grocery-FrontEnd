@@ -12,7 +12,7 @@ const AdminSidebar = () => {
   };
   return (
    <div className="admin-sidebar">
-    <Link to="/admin-dashbord" className='admin-sidebar-title'>
+    <Link to="/admin" className='admin-sidebar-title'>
     <i className="bi bi-columns"></i>
     Dashboard
     </Link>
