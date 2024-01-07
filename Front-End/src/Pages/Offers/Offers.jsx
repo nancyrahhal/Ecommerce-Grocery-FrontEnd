@@ -7,20 +7,14 @@ const Offers = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get(
-          process.env.REACT_APP_API_URL + "/product"
-        ); // Replace with the correct API endpoint
+        const response = await axios.get(`http://localhost:4000/api/products/`);
         setProducts(response.data);
       } catch (error) {
         console.error("Error fetching products:", error);
       }
     };
-
-    fetchProducts();
-  }, []);
-
-  console.log(products);
-
+    fetchProducts();},[]);
+  
   return (
     <div>
       <img
@@ -30,17 +24,20 @@ const Offers = () => {
       <div className="offers-container">
         <div className="offers-list">
           {products
-            .filter((product) => product.itsnew)
+            .filter((product) => product)
             .map((product, index) => (
               <div key={index} className="offer-item">
-                <img src={product.image} alt={product.productName} />
+                <img
+                  src={`http://localhost:4000/${product.image}`}
+                  alt={product.productName}
+                />
                 <div className="offer-details">
                   <h3>{product.productName}</h3>
                   <p>
                     <span className="old-price">{product.price}</span>{" "}
-                    <span className="new-price">{product.newprice}</span>
+                    <span className="new-price">{product.newPrice}</span>
                   </p>
-                  <p>Store : {product.storeData.StoreName}</p>
+                  <p>Store : {product.grocery[0].storeName}</p>
                 </div>
               </div>
             ))}
