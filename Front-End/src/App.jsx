@@ -12,6 +12,12 @@ import Home from "./Pages/Home/Home.jsx";
 import Footer from "./Components/Footer/Footer.jsx";
 import GroceryDetails from "./Pages/GroceryDetailsPage/GroceryDetails.jsx";
 import Offers from "./Pages/Offers/Offers.jsx";
+import OffersTables from "./Pages/Admin/Forms/OffersTables.jsx";
+import GroceryTable from "./Pages/Admin/Forms/GroceryTable.jsx";
+import CategoryTable from "./Pages/Admin/Forms/CategoryTable.jsx"
+import ProductTabel from "./Pages/Admin/Forms/ProductTabel.jsx";
+import ViewGrocery from "./Pages/Admin/Forms/ViewGrocery.jsx";
+
 function App() {
   const { user } = useAuthContext();
   useEffect(() => {}, [user]);
@@ -29,6 +35,24 @@ function App() {
                 element={user ? <AdminDashboard /> : <Navigate to="/login" />}
               />
             </Route>
+
+            <Route
+              path="/admin/offer-table"
+              element={<OffersTables />}
+            />
+            <Route
+              path="/admin/grocery-table"
+              element={<GroceryTable />}
+            />
+            <Route
+              path="/admin/category-table"
+              element={<CategoryTable />}
+            />
+            <Route
+              path="/admin/product-table"
+              element={<ProductTabel />}
+            />
+            <Route path="/profile/:id" element={<ViewGrocery />} />
 
             <Route
               path="/"

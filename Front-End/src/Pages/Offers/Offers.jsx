@@ -37,7 +37,7 @@ const Offers = () => {
                     <span className="old-price">{product.price}</span>{" "}
                     <span className="new-price">{product.newPrice}</span>
                   </p>
-                  <p>Store : {product.grocery[0].storeName}</p>
+                  <p>Store : {product.grocery[0]?.storeName}</p>
                 </div>
               </div>
             ))}

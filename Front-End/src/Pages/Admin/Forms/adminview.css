@@ -1,0 +1,23 @@
+.view-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.view-image{
+    width:300px
+}
+.view-title{
+    color: green;
+}
+
+.view-form{
+    display: flex;
+    flex-direction: column;
+}
