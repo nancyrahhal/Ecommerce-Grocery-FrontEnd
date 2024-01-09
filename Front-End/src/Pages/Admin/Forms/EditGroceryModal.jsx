@@ -1,12 +1,8 @@
-// src/components/EditGroceryModal.js
-import React, { useState,useEffect} from "react";
-
+import React, { useState, useEffect } from "react";
 
 const EditGroceryModal = ({ grocery, onClose, onUpdate }) => {
   const [editedGrocery, setEditedGrocery] = useState(grocery);
   useEffect(() => {}, [grocery]);
-
-  console.log("editedGrocery", editedGrocery)
 
   const handleChange = (event) => {
     setEditedGrocery({
@@ -15,7 +11,8 @@ const EditGroceryModal = ({ grocery, onClose, onUpdate }) => {
     });
   };
 
-  const handleUpdate = () => {
+  const handleUpdate = (event) => {
+    event.preventDefault();
     onUpdate(editedGrocery);
     onClose();
   };
@@ -25,21 +22,21 @@ const EditGroceryModal = ({ grocery, onClose, onUpdate }) => {
       <div className="modal-content">
         <h1>Edit Grocery</h1>
         <form className="view-form" onSubmit={handleUpdate}>
-          <label htmlFor="Name">Owner Name</label>
+          <label htmlFor="OwnerName">Owner Name</label>
           <input
             value={editedGrocery?.admin?.username}
             type="text"
-            id="Name"
-            name="OwnerName"
+            id="OwnerName"
+            name="admin.username"
             onChange={handleChange}
           />
 
-          <label htmlFor="Number">Number</label>
+          <label htmlFor="PhoneNumber">Number</label>
           <input
             value={editedGrocery?.phoneNumber}
             type="text"
-            id="Number"
-            name="PhoneNumber"
+            id="PhoneNumber"
+            name="phoneNumber"
             onChange={handleChange}
           />
 
@@ -48,7 +45,7 @@ const EditGroceryModal = ({ grocery, onClose, onUpdate }) => {
             value={editedGrocery?.city}
             type="text"
             id="City"
-            name="City"
+            name="city"
             onChange={handleChange}
           />
 
@@ -57,7 +54,7 @@ const EditGroceryModal = ({ grocery, onClose, onUpdate }) => {
             value={editedGrocery?.area}
             type="text"
             id="Area"
-            name="Area"
+            name="area"
             onChange={handleChange}
           />
 

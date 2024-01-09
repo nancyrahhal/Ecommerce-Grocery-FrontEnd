@@ -11,9 +11,12 @@ import dairy from "../../assets/dairy-products.png";
 import riceandpasta from "../../assets/rice.png";
 import drinks from "../../assets/drink.png";
 import bread from "../../assets/white-bread.png";
+import Loader from "react-js-loader";
 
 const GroceryDetails = () => {
   const [isLoading, setIsLoading] = useState(false);
+  const [isLoading2, setIsLoading2] = useState(false);
+
   const [storeDetails, setStoreDetails] = useState(null);
   const [categoriesArray, setCategoriesArray] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState(null);
@@ -128,6 +131,14 @@ const GroceryDetails = () => {
     return <p>Loading...</p>;
   }
 
+  const showAllLoader = () => {
+    setIsLoading2(true);
+    setShowAll(true);
+    setTimeout(() => {
+      setIsLoading2(false);
+    }, 200);
+  };
+
   return (
     <div>
       {storeDetails && (
@@ -166,8 +177,9 @@ const GroceryDetails = () => {
 
       <div className="showAllButton">
         <button
+          Style={"color:#7cb334"}
           onClick={() => {
-            setShowAll(true);
+            showAllLoader();
           }}
         >
           Show All Products
@@ -196,45 +208,58 @@ const GroceryDetails = () => {
         </div>
       </div>
 
-      <div className="products">
-        {!showAll &&
-          storeCategoryProducts &&
-          storeCategoryProducts?.map((product) => (
-            <div key={product.id} className="product">
-              <div className="productcard">
-                <img
-                  src={`http://localhost:4000/${product.image}`}
-                  className="productimage"
-                  alt={product.productName}
-                />
-                <div>
-                  <h1>{product.productName}</h1>
-                  <h4>price: {product.price}</h4>
+      {!isLoading2 ? (
+        <div>
+          <div className="products">
+            {!showAll &&
+              storeCategoryProducts &&
+              storeCategoryProducts?.map((product) => (
+                <div key={product.id} className="product">
+                  <div className="productcard">
+                    <img
+                      src={`http://localhost:4000/${product.image}`}
+                      className="productimage"
+                      alt={product.productName}
+                    />
+                    <div>
+                      <h1>{product.productName}</h1>
+                      <h4>price: {product.price}</h4>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          ))}
-      </div>
+              ))}
+          </div>
 
-      <div className="products">
-        {showAll &&
-          storeAllProducts &&
-          storeAllProducts?.map((product) => (
-            <div key={product.id} className="product">
-              <div className="productcard">
-                <img
-                  src={`http://localhost:4000/${product.image}`}
-                  className="productimage"
-                  alt={product.productName}
-                />
-                <div>
-                  <h1>{product.productName}</h1>
-                  <h4>price: {product.price}</h4>
+          <div className="products">
+            {showAll &&
+              storeAllProducts &&
+              storeAllProducts?.map((product) => (
+                <div key={product.id} className="product">
+                  <div className="productcard">
+                    <img
+                      src={`http://localhost:4000/${product.image}`}
+                      className="productimage"
+                      alt={product.productName}
+                    />
+                    <div>
+                      <h1>{product.productName}</h1>
+                      <h4>price: {product.price}</h4>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          ))}
-      </div>
+              ))}
+          </div>
+        </div>
+      ) : (
+        <div className="loaderSingleDetail">
+          <Loader
+            type="spinner-circle"
+            bgColor={"#7cb334"}
+            color={"#7cb334"}
+            size={100}
+          />
+        </div>
+      )}
     </div>
   );
 };

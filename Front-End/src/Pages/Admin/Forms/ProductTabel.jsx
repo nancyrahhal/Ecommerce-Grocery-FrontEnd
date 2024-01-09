@@ -60,12 +60,16 @@ const ProductTable = () => {
   }, [refresh]); // Empty dependency array to run the effect only once when the component mounts
 
   const deleteProduct = async (id) => {
-    try {
-      await axios.delete(`http://localhost:4000/api/products/${id}`);
-      setProducts(products.filter((product) => product.id !== id));
-    } catch (error) {
-      console.error("There was an error in deleting the product", error);
-    }
+   const confirm =window.confirm('Are you sure you want to delete this product');
+   
+   if(confirm) {
+      try {
+        await axios.delete(`http://localhost:4000/api/products/${id}`);
+        setProducts(products.filter((product) => product.id !== id));
+      } catch (error) {
+        console.error("There was an error in deleting the product", error);
+      }
+   }
   };
 
   const editProduct = (id) => {

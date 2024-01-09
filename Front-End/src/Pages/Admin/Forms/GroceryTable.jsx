@@ -54,7 +54,7 @@ const GroceryTable = () => {
 
   const updateGrocery = (updatedGrocery) => {
     axios
-      .patch(
+      .put(
         `http://localhost:4000/api/groceries/${updatedGrocery.id}`,
         updatedGrocery
       )

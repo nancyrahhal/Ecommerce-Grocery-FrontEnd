@@ -62,8 +62,8 @@ border-radius: 10px;
   display: flex;
   flex-wrap: wrap;
   gap: 100px;
-  width: 83%;
-  margin: 0 auto;
+  width: 100%;
+  justify-content: center;
 }
 
 .products h1,h4 {
@@ -160,5 +160,10 @@ border-radius: 10px;
     .detailsspan {
       margin-right: 10px;
     }
+  }
+  
+  .loaderSingleDetail{
+    display: flex;
+    justify-content: center;
   }
   

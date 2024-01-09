@@ -7,9 +7,6 @@ const ViewGrocery = ({ grocery }) => {
     <div className="view-container">
       <h1 className="view-title">{grocery?.storeName}</h1>
       <form className="view-form">
-        <label htmlFor="Image" className="view-image">
-          Image
-        </label>
         <img
           className="view-image"
           src={`http://localhost:4000/uploads/${grocery.storeImage}`}

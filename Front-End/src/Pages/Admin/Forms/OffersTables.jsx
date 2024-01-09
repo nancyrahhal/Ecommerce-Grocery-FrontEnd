@@ -21,24 +21,26 @@ const OffersTables = () => {
       .catch((error) => {
         console.error("There was an error in fetching products", error);
       });
-  }, []);
+  }, [products]);
 
   const deleteProduct = (id) => {
-    axios
-      .delete(`http://localhost:4000/api/products/${id}`)
-      .then((response) => {
-        console.log(response.data);
-        // Update the product's itsnew property to false
-        setProducts((prevProducts) =>
-          prevProducts.map((product) =>
-            product.id === id ? { ...product, itsOffer: 0 } : product
-          )
-        );
-      })
-      .catch((error) => {
-        console.error("There was an error in deleting product", error);
-      });
-  };
+const confirm =window.confirm('Are you sure you want to delete')
+if(confirm) {
+      axios
+        .delete(`http://localhost:4000/api/products/${id}`)
+        .then((response) => {
+          console.log(response.data);
+          // Update the product's itsnew property to false
+          setProducts((prevProducts) =>
+            prevProducts.map((product) =>
+              product.id === id ? { ...product, itsOffer: 0 } : product
+            )
+          );
+        })
+        .catch((error) => {
+          console.error("There was an error in deleting product", error);
+        });
+  };}
 
   return (
     <section className="table-container">
@@ -62,7 +64,11 @@ const OffersTables = () => {
                 <td>{product.id}</td>
                 <td>
                   <div className="table-image">
-                    <img className="table-offer-image" src={offerpic} alt="" />
+                    <img
+                      className="table-offer-image"
+                      src={`http://localhost:4000/${product.image}`}
+                      alt=""
+                    />
                     <span className="table-username">
                       {product.productName}
                     </span>
@@ -86,7 +92,7 @@ const OffersTables = () => {
           </tbody>
         </table>
       </div>
-      {selectedProduct && <ViewOffer product={selectedProduct} />}
+      {selectedProduct && <ViewOffer offer={selectedProduct} />}
     </section>
   );
 };

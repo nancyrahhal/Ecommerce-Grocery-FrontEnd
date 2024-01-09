@@ -64,7 +64,7 @@ if (confirm) {
                 <td>
                   <div className="table-button-group">
                     <button>
-                      <Link to={`/profile/${category.grocery[0].id}`}>  
+                      <Link to={`/StoreDetails/${category.grocery[0].id}`}>
                         View Grocery
                       </Link>
                     </button>
